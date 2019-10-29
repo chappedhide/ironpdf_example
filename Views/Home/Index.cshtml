@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col text-center">
+        <button class="btn btn-primary" data-bind="click: getReport">Report</button>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        var getReport = function () {
+            var win = window.open("/Reports/ExampleReport");
+            win.focus();
+        };
+
+        $(document).ready(function () {
+            ko.applyBindings();
+        });
+    </script>
+}
